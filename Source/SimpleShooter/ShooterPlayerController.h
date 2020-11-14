@@ -17,6 +17,7 @@ class SIMPLESHOOTER_API AShooterPlayerController : public APlayerController
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
+	void GoToMainMenu();
 
 public:
 	virtual void GameHasEnded(AActor* EndGameFocus, bool bIsWinner) override;
@@ -37,4 +38,6 @@ private:
 
 	UPROPERTY()
 	UUserWidget* HUD;
+
+
 };

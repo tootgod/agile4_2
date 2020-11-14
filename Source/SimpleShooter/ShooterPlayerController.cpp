@@ -4,6 +4,7 @@
 #include "ShooterPlayerController.h"
 #include "TimerManager.h"
 #include "Blueprint/UserWidget.h"
+#include "Kismet/GameplayStatics.h"
 
 void AShooterPlayerController::BeginPlay() 
 {
@@ -15,6 +16,10 @@ void AShooterPlayerController::BeginPlay()
         {
             HUD->AddToViewport();
         }
+}
+void AShooterPlayerController::GoToMainMenu()
+{
+    UGameplayStatics::OpenLevel(GetWorld(), "MainMenu");
 }
 
 void AShooterPlayerController::GameHasEnded(AActor* EndGameFocus, bool bIsWinner)
@@ -40,6 +45,7 @@ void AShooterPlayerController::GameHasEnded(AActor* EndGameFocus, bool bIsWinner
             LooseScreen->AddToViewport();
         }
     }
-    
-    GetWorldTimerManager().SetTimer(RestartTimer, this, &APlayerController::RestartLevel, RestartDelay);
+
+    GetWorldTimerManager().SetTimer(RestartTimer, this, &AShooterPlayerController::GoToMainMenu, RestartDelay);
+
 }
