@@ -95,3 +95,14 @@ float AShooterCharacter::GetHealthPercent() const
 {
 	return Health / MaxHealth;
 }
+
+AGun* AShooterCharacter::GetGunClass() 
+{
+	return Gun;
+}
+
+void AShooterCharacter::SetHealth(float NewHealth) 
+{
+	Health = NewHealth;
+	MaxHealth = NewHealth;
+}

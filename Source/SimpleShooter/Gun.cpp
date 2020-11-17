@@ -88,3 +88,8 @@ void AGun::PullTrigger()
 		}
 	}
 }
+
+void AGun::SetDamage(float NewDamage) 
+{
+	Damage = NewDamage;
+}

@@ -17,6 +17,9 @@ public:
 
 	void PullTrigger();
 
+	UFUNCTION(BlueprintCallable)
+	void SetDamage(float NewDamage);
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;

@@ -28,6 +28,12 @@ public:
 	UFUNCTION(BlueprintPure)
 	float GetHealthPercent() const;
 
+	UFUNCTION(BlueprintCallable)
+	AGun* GetGunClass();
+
+	UFUNCTION(BlueprintCallable)
+	void SetHealth(float NewHealth);
+
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
