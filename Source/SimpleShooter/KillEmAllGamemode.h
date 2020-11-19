@@ -16,7 +16,7 @@ class SIMPLESHOOTER_API AKillEmAllGamemode : public ASimpleShooterGameModeBase
 
 public:
 	virtual void PawnKilled(APawn* Pawnkilled);
-	
+
 private:
 	void EndGame(bool bIsPlayerWinner);
 	

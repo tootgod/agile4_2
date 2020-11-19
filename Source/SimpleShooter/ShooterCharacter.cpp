@@ -5,6 +5,9 @@
 #include "Gun.h"
 #include "Components/CapsuleComponent.h"
 #include "SimpleShooterGameModeBase.h"
+#include "EngineUtils.h"
+#include "GameFramework/Controller.h"
+#include "ShooterAIController.h"
 
 // Sets default values
 AShooterCharacter::AShooterCharacter()
@@ -26,12 +29,24 @@ void AShooterCharacter::BeginPlay()
 	Gun->SetOwner(this);
 
 	Health = MaxHealth;
+
+	for(AShooterAIController* AIController: TActorRange<AShooterAIController>(GetWorld()))
+     {
+        NumberOfEnemies++;
+     }  
 }
 
 // Called every frame
 void AShooterCharacter::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+
+	NumberOfEnemies = 0; 
+	
+	for(AShooterAIController* AIController: TActorRange<AShooterAIController>(GetWorld()))
+     {
+        NumberOfEnemies++;
+     }  
 
 }
 
@@ -81,6 +96,7 @@ float AShooterCharacter::TakeDamage(float DamageAmount, struct FDamageEvent cons
 
 		DetachFromControllerPendingDestroy();
 		GetCapsuleComponent()->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+		NumberOfEnemies--;
 	}
 
 	return DamageToApply;

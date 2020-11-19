@@ -44,6 +44,9 @@ public:
 
 	void Shoot();
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	float NumberOfEnemies = 0;
+
 private:
 	void MoveForward(float AxisValue);
 	void MoveSide(float AxisValue);

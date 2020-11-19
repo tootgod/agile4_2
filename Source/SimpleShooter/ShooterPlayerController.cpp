@@ -5,6 +5,9 @@
 #include "TimerManager.h"
 #include "Blueprint/UserWidget.h"
 #include "Kismet/GameplayStatics.h"
+#include "ShooterAIController.h"
+#include "EngineUtils.h"
+#include "GameFramework/Controller.h"
 
 void AShooterPlayerController::BeginPlay() 
 {
@@ -16,11 +19,13 @@ void AShooterPlayerController::BeginPlay()
         {
             HUD->AddToViewport();
         }
+ 
 }
 void AShooterPlayerController::GoToMainMenu()
 {
     UGameplayStatics::OpenLevel(GetWorld(), "MainMenu");
 }
+
 
 void AShooterPlayerController::GameHasEnded(AActor* EndGameFocus, bool bIsWinner)
 {
