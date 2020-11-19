@@ -81,6 +81,7 @@ DerivedDataCache/*
 Content/AssetPacks/*
 Content/Collections/*
 Content/Developers/*
+!Content/AssetPacks/ShooterGame/Sounds/Music/*
 
 
 VSCode Files
