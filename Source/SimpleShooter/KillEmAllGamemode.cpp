@@ -5,11 +5,13 @@
 #include "EngineUtils.h"
 #include "GameFramework/Controller.h"
 #include "ShooterAIController.h"
+#include "ShooterPlayerController.h"
 
 
 void AKillEmAllGamemode::PawnKilled(APawn* Pawnkilled)
 {
     Super::PawnKilled(Pawnkilled);
+
 
     APlayerController* PlayerController = Cast<APlayerController>(Pawnkilled->GetController());    
     if (PlayerController != nullptr)
