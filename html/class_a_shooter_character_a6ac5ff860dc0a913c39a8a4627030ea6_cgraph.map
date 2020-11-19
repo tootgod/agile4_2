@@ -1,0 +1,5 @@
+<map id="AShooterCharacter::TakeDamage" name="AShooterCharacter::TakeDamage">
+<area shape="rect" id="node1" title=" " alt="" coords="5,39,145,80"/>
+<area shape="rect" id="node2" href="$class_a_shooter_character.html#aaaa57073f0ea14b49d59b0b63de43deb" title=" " alt="" coords="230,5,370,47"/>
+<area shape="rect" id="node3" href="$class_a_simple_shooter_game_mode_base.html#a1e53a2703a7b77ddaa65f9f39c523c6c" title=" " alt="" coords="193,71,407,112"/>
+</map>
